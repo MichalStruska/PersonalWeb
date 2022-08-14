@@ -1,3 +1,74 @@
+
+.navbar
+{
+    background-color: lightgrey;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgba(0, 0, 0, 0.584);
+}
+
+.nav-item
+{
+    color:rgb(0, 0, 0);
+    width: 50%;
+    padding-right: 10%;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.nav-item-custom
+{
+    color:rgb(0, 0, 0);
+    width: 50%;
+    padding-right: 10%;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.dropdown-menu
+{
+    background-color: rgb(147, 147, 147);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-top: 10%;
+}
+
+.nav-item-custom:hover
+{
+    color:rgb(175, 19, 74);
+    
+}
+
+.dropdown-toggle-custom:hover
+{
+    color: rgb(119, 119, 119);
+}
+
+.btn-link:hover
+{
+    color: rgb(119, 119, 119);
+}
+
+
+.navbar-nav
+{
+    float: left;
+    white-space: nowrap;
+    justify-content: left;
+    margin-left: 20%;
+}
+
+.navbar-nav-custom
+{
+    float: right;
+    white-space: nowrap;
+    justify-content: right;
+}
+
+
 #article-title
 {
     font-size: 20px;
@@ -40,11 +111,6 @@
     color: white;
 }
 
-.navbar-custom {
-    /* height: 20px; */
-    background-color: rgb(171, 81, 81);
-}
-
 .small-link
 {
     font-size: 12px;
@@ -79,11 +145,61 @@
 main
 {
     position: absolute;
-    top: 100px;
+    top: 20%;
+}
+
+.article-card
+{
+    background: rgba(255, 255, 255, 0);
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.article-container
+{
+    background: rgba(241, 241, 241, 0);
+    border-radius: 15px;
+    padding: 2%;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    
 }
 
 .article-thumbnail
 {
-    background:blue;
+    background:rgb(235, 235, 235);
+    vertical-align: middle;
+    padding: 10px;
+    justify-self: right;
+    width: 500px;
+    height: auto;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
 }
+
+.image-thumbnail-custom
+{
+    width: 70%;
+    height: auto;
+    margin: auto;
+    display: block;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1;
+}
+
+#content
+{
+    padding-left: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 
