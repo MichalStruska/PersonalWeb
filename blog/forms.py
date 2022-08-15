@@ -3,12 +3,12 @@ from .models import Post, Category
 from django_extensions.db.fields import AutoSlugField
 from django.template.defaultfilters import slugify
 
-# choices = Category.objects.all().values_list('name','name')
+choices = Category.objects.all().values_list('name','name')
 
-# choice_list = []
+choice_list = []
 
-# for item in choices:
-#     choice_list.append(item)
+for item in choices:
+    choice_list.append(item)
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -21,7 +21,7 @@ class PostForm(forms.ModelForm):
             # 'slug': AutoSlugField(populate_from=['title']),
             # 'author': forms.Select(attrs={'class':'form-control'}),
             'author': forms.TextInput(attrs={'class':'form-control', 'value':'', 'id':'elder','type':'hidden'}),
-            # 'category': forms.Select(choices=choice_list, attrs={'class':'form-control'}),
+            'category': forms.Select(choices=choice_list, attrs={'class':'form-control'}),
             'content': forms.Textarea(attrs={'class':'form-control'}),
             'snippet': forms.Textarea(attrs={'class':'form-control'}),
             
@@ -39,7 +39,7 @@ class EditForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class':'form-control'}),
-            # 'category': forms.Select(choices=choice_list, attrs={'class':'form-control'}),
+            'category': forms.Select(choices=choice_list, attrs={'class':'form-control'}),
             'content': forms.Textarea(attrs={'class':'form-control'}),
             'snippet': forms.Textarea(attrs={'class':'form-control'}),
         }
