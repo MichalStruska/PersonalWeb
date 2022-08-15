@@ -38,6 +38,7 @@ class PostDetail(generic.DetailView):
         context['liked'] = liked
         return context
 
+
 class AddPostView(generic.CreateView):
     model = Post
     form_class = PostForm
@@ -88,6 +89,9 @@ def CategoryView(request, cats):
 
 def about(request):
     return render(request, 'blog/about.html',{'title': 'about'})
+
+def splash(request):
+    return render(request, 'blog/splash.html',{'title': 'splash'})
 
 def news(request):
     return render(request, 'blog/news.html',{'title': 'news'})

@@ -1,0 +1,55 @@
+.bottomright
+{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+.bottomleft
+{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+.topleft
+{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.topright
+{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+.center
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lower-center
+{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.splash-link
+{
+    color:rgb(41, 41, 41);
+    font-size: large;
+}
+
+.splash-link:hover
+{
+    color:rgb(235, 24, 129);
+}
+
+model-viewer {
+    width: 800px;
+    height: 600px;
+  }
