@@ -10,20 +10,20 @@ STATUS = (
 )
 
 class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, unique=True, null=True, blank=True)
     #slug = models.SlugField(max_length=200, unique=True)
     #title_tag = models.CharField(max_length=255, default="Dept")
     #slug = AutoSlugField(populate_from=['title'])
-    author = models.ForeignKey(User, on_delete= models.CASCADE)
-    updated_on = models.DateTimeField(auto_now= True)
+    author = models.ForeignKey(User, on_delete= models.CASCADE, null=True, blank=True)
+    updated_on = models.DateTimeField(auto_now= True, null=True, blank=True)
     #content = models.TextField()
     content = RichTextField(blank=True, null=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=1)
+    created_on = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    status = models.IntegerField(choices=STATUS, default=1, null=True, blank=True)
     article_image = models.ImageField(null = True, blank = True, upload_to = "images/")
     thumbnail_image = models.ImageField(null = True, blank = True, upload_to = "images/")
-    category = models.CharField(max_length=255, default="News")
-    snippet = models.CharField(max_length=255)
+    category = models.CharField(max_length=255, default="News", null=True, blank=True)
+    snippet = models.CharField(max_length=255, null=True, blank=True)
     likes = models.ManyToManyField(User, related_name='blog_posts')
 
     def total_likes(self):
@@ -39,14 +39,14 @@ class Post(models.Model):
         return reverse('blog-home')
     
 class Profile(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     profile_image = models.ImageField(null = True, blank = True, upload_to = "images/profile/")
-    bio = models.TextField(max_length=500, blank=True)
+    bio = models.TextField(max_length=500, null=True, blank=True)
     facebook_link = models.CharField(max_length=255, null=True, blank=True)
     twitter_link = models.CharField(max_length=255, null=True, blank=True)
     instagram_link = models.CharField(max_length=255, null=True, blank=True)
     website_link = models.CharField(max_length=255, null=True, blank=True)
-    location = models.CharField(max_length=30, blank=True)
+    location = models.CharField(max_length=30,null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
 
     def get_absolute_url(self):
@@ -56,7 +56,7 @@ class Profile(models.Model):
         return self.user.username
 
 class Category(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200, unique=True, null=True, blank=True)
     #slug = AutoSlugField(populate_from=['name'])
 
     def __str__(self):

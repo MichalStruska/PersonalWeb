@@ -28,7 +28,10 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["10.0.1.15"]
+ALLOWED_HOSTS = ["10.0.1.15",
+                 "localhost",
+                 "10.7.11.204",
+                 "127.0.0.1"]
 
 
 # Application definition
@@ -81,8 +84,12 @@ WSGI_APPLICATION = 'PersonalWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'PersonalWeb',
+        'USER': 'MichalStruska',
+        'PASSWORD': 'Forthislifeicannotchange1408!',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
