@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'PersonalWeb',
-        'USER': 'MichalStruska',
-        'PASSWORD': config("DATABASE_PASSWORD"),
+        'USER': 'postgres',
+        'PASSWORD': config("DATABASE_PASSWORD_LENOVO"),
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -148,3 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGOUT_REDIRECT_URL = 'blog-home'
+
+
+import django_on_heroku
+django_on_heroku.settings(locals())

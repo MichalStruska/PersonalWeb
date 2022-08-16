@@ -40,7 +40,12 @@ decorator==4.4.2
 defusedxml==0.6.0
 diff-match-patch @ file:///tmp/build/80754af9/diff-match-patch_1594828741838/work
 distributed @ file:///C:/ci/distributed_1605066566400/work
+dj-database-url==1.0.0
 Django==2.2.5
+django-ckeditor==6.3.2
+django-extensions @ file:///home/conda/feedstock_root/build_artifacts/django-extensions_1636315318557/work
+django-js-asset==2.0.0
+django-on-heroku==1.1.2
 docutils==0.16
 entrypoints==0.3
 et-xmlfile==1.0.1
@@ -132,9 +137,13 @@ Pillow @ file:///C:/ci/pillow_1603821929285/work
 pkginfo==1.6.1
 pluggy==0.13.1
 ply==3.11
+postgres==4.0
 prometheus-client==0.8.0
 prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1602688806899/work
 psutil @ file:///C:/ci/psutil_1598352273540/work
+psycopg2==2.8.6
+psycopg2-binary==2.9.3
+psycopg2-pool==1.1
 py @ file:///tmp/build/80754af9/py_1593446248552/work
 pycodestyle==2.6.0
 pycosat==0.6.3
@@ -154,7 +163,7 @@ pyrsistent @ file:///C:/ci/pyrsistent_1600123688363/work
 PySocks @ file:///C:/ci/pysocks_1594394709107/work
 pytest==0.0.0
 python-dateutil==2.8.1
-python-decouple==3.6
+python-decouple @ file:///home/conda/feedstock_root/build_artifacts/python-decouple_1643839541685/work
 python-jsonrpc-server @ file:///tmp/build/80754af9/python-jsonrpc-server_1600278539111/work
 python-language-server @ file:///tmp/build/80754af9/python-language-server_1600454544709/work
 pytz==2020.1
@@ -219,6 +228,7 @@ watchdog @ file:///C:/ci/watchdog_1593446515400/work
 wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
 webencodings==0.5.1
 Werkzeug==1.0.1
+whitenoise==6.2.0
 widgetsnbextension==3.5.1
 win-inet-pton==1.1.0
 win-unicode-console==0.5
