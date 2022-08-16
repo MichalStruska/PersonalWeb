@@ -96,8 +96,8 @@ matplotlib
 mccabe
 mistune
 mkl-fft
-mkl-random==1.0.4
-mkl-service==2.3.0
+mkl-random
+mkl-service
 mock==4.0.2
 more-itertools
 mpmath==1.1.0
