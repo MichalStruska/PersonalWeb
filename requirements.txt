@@ -93,8 +93,8 @@ locket==0.2.0
 lxml
 MarkupSafe
 matplotlib
-mccabe==0.6.1
-menuinst==1.4.16
+mccabe
+menuinst
 mistune
 mkl-fft==1.0.14
 mkl-random==1.0.4
