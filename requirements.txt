@@ -1,5 +1,5 @@
 Django
 django_ckeditor==6.3.2
-django_extensions==3.1.5
+django_extensions==3.0.0
 django_on_heroku==1.1.2
 python-decouple==3.6
