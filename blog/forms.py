@@ -3,7 +3,8 @@ from .models import Post, Category
 from django_extensions.db.fields import AutoSlugField
 from django.template.defaultfilters import slugify
 
-choices = Category.objects.all().values_list('name','name')
+choices = [("yes","yes"), ("no","no")]
+#Category.objects.all().values_list('name','name')
 
 choice_list = []
 
