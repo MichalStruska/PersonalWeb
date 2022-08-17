@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).parent.absolute()
 # SECURITY WARNING: keep the secret key used in production secret!
 from decouple import config
 
+DATABASE_URL = os.environ['DATABASE_URL']
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
