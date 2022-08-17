@@ -13,7 +13,9 @@
     
     <a class="topright splash-link" href="#">Publications</a>
     <a class="topleft splash-link" href="#">Projects</a>
-    <div class="center big-model"> <model-viewer alt="skull" src="{% static 'images/paranthropus.glb' %}" interaction-prompt="none" disable-pan auto-rotate camera-orbit="310deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer></div>
+    <div class="center big-model" id="3D-model">
+      <model-viewer alt="skull" src="{% static 'images/paranthropus.glb' %}" interaction-prompt="none" disable-pan auto-rotate camera-orbit="310deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer>
+    </div>
 
     <div class="Navbar" id="bottom-navbar">
        
@@ -33,11 +35,11 @@
        <nav class="Navbar__Items Navbar__Items--right">
         
        </nav>
-     </div>
+    </div>
 
-     <a class="Navbar__Link Navbar__Link-toggle lower-center bottom-link">
-        +
-     </a>
+    <a class="bottom-center navbar-toggle">
+      +
+    </a>
 
 
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>

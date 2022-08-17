@@ -7,6 +7,7 @@ function classToggle() {
     navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
     bottom_links.forEach(bottom_links => bottom_links.classList.toggle('bottom-link-move-up'));
     navBar.classList.toggle('Navbar__ToggleShow');
+    document.getElementById("3D-model").classList.toggle('model-move-up');
     if (isShown) {
         moveDown();
     }
@@ -17,16 +18,32 @@ function classToggle() {
   }
   
 function moveUp() {
-    document.querySelector('.Navbar__Link-toggle').style.bottom = "20%";
-    document.querySelector('.Navbar__Link-toggle').innerHTML = "x";
+    if ((IsPhone()) && (IsLandscape()))
+    {
+        document.querySelector('.navbar-toggle').style.bottom = "42%";
+    }
+    else
+    {
+        document.querySelector('.navbar-toggle').style.bottom = "30%";
+    }
+    document.querySelector('.navbar-toggle').innerHTML = "x";
     
     isShown = true;
 }
 
+function IsLandscape() {
+    return (screen.availHeight < screen.availWidth);
+}
+
+function IsPhone()
+{
+    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+}
+
 function moveDown() {
-    document.querySelector('.Navbar__Link-toggle').style.bottom = "10%";
-    document.querySelector('.Navbar__Link-toggle').innerHTML = "+";
+    document.querySelector('.navbar-toggle').style.bottom = "10%";
+    document.querySelector('.navbar-toggle').innerHTML = "+";
     isShown = false;
 }
 
-document.querySelector('.Navbar__Link-toggle').addEventListener('click', classToggle);
+document.querySelector('.navbar-toggle').addEventListener('click', classToggle);
