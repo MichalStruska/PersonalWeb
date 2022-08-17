@@ -8,10 +8,6 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'PersonalWeb.settings')
 
-    if '/app' in os.environ['HOME']:
-        import django_heroku
-        django_heroku.settings(locals())
-    
     try:
         from django.core.management import execute_from_command_line
     except ImportError:
