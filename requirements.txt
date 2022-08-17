@@ -1,7 +1,12 @@
-Django
+config==0.3.9
+dj-database-url==0.5.0
 django_ckeditor==6.3.2
+Django==1.11
 django_extensions==3.0.0
 django_on_heroku==1.1.2
-python-decouple==3.6
-whitenoise==4.0
+gunicorn==19.9.0
 Pillow==5.2.0
+psycopg2==2.7.5
+python-decouple==3.1
+pytz==2018.5
+whitenoise==4.0
