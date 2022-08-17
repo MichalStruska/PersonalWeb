@@ -26,6 +26,12 @@ from decouple import config
 DATABASE_URL = os.environ['DATABASE_URL']
 SECRET_KEY = config("SECRET_KEY")
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
