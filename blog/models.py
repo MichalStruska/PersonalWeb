@@ -55,6 +55,22 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
+class ProfileSingle(models.Model):
+    user_name = models.CharField(max_length=255, null=True, blank=True)
+    first_name = models.CharField(max_length=255, null=True, blank=True)
+    last_name = models.CharField(max_length=255, null=True, blank=True)
+    profile_image = models.ImageField(null = True, blank = True, upload_to = "images/profile/")
+    bio = models.TextField(max_length=500, null=True, blank=True)
+    facebook_link = models.CharField(max_length=255, null=True, blank=True)
+    twitter_link = models.CharField(max_length=255, null=True, blank=True)
+    instagram_link = models.CharField(max_length=255, null=True, blank=True)
+    website_link = models.CharField(max_length=255, null=True, blank=True)
+    location = models.CharField(max_length=30,null=True, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('blog-home')
+
 class Category(models.Model):
     name = models.CharField(max_length=200, unique=True, null=True, blank=True)
     #slug = AutoSlugField(populate_from=['name'])

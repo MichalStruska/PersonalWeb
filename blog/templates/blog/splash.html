@@ -1,48 +1,19 @@
+{% extends "blog/base.html" %}
 {% load static %}
-{% block title %}<title>Michal</title>{% endblock %}
+{% block title %}<title>Michal-splash</title>{% endblock %}
+
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/splash.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
-<body>
+{% block content %}
+<div class="big-model" id="3D-model">
+  <model-viewer alt="skull" src="{% static 'images/paranthropus.glb' %}" disable-pan interaction-prompt="none" autoplay auto-rotate camera-orbit="310deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer>
+  <!-- <model-viewer alt="skull" src="{% static 'images/male_runner04.glb' %}" enable-pan align-model="center" interaction-prompt="none" autoplay animation-name="Run02" auto-rotate camera-orbit="100deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer> -->
+</div>
+{% endblock content %}
+
     
-    <a class="bottomleft splash-link bottom-link" href="#">About me</a>
-    <a class="bottomright splash-link bottom-link" href="#">some else</a>
-    
-    <a class="topright splash-link" href="#">Publications</a>
-    <a class="topleft splash-link" href="#">Projects</a>
-    <div class="center big-model" id="3D-model">
-      <!-- <model-viewer alt="skull" src="{% static 'images/male_runner03.glb' %}" enable-pan interaction-prompt="none" autoplay animation-name="Run02" auto-rotate camera-orbit="310deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer> -->
-      <model-viewer alt="skull" src="{% static 'images/male_runner04.glb' %}" enable-pan interaction-prompt="none" autoplay animation-name="Run02" auto-rotate camera-orbit="100deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer>
-    </div>
 
-    <div class="Navbar" id="bottom-navbar">
-       
-       <nav class="Navbar__Items Navbar-items-center">
-         
-         <a class="bi bi-twitter Navbar__Link" href="https://twitter.com/MichalStruska" target="_blank"></a>
-         <a class="bi bi-facebook Navbar__Link" href="https://www.facebook.com/michal.struska.50" target="_blank"></a>
-         <a class="bi bi-github Navbar__Link" href="https://github.com/MichalStruska/" target="_blank"></a>
-         <a class="Navbar__Link text-link" href="https://www.natur.cuni.cz/biology/anthropology/o-katedre" target="_blank">
-            Dept website
-          </a>
-          <a class="Navbar__Link text-link" href="https://www.natur.cuni.cz/biology/anthropology/pracoviste-katedry/laborator-antropologie-kostni-tkane-en" target="_blank">
-            Lab website
-          </a>
-
-       </nav>
-       <nav class="Navbar__Items Navbar__Items--right">
-        
-       </nav>
-    </div>
-
-    <a class="bottom-center navbar-toggle">
-      +
-    </a>
-
-
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script src="{% static 'js/toggle_button.js' %}"></script>
-</body>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Post, Category
+from .models import Post, Category, Profile, ProfileSingle
 from .forms import PostForm, EditForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -85,6 +85,32 @@ def CategoryView(request, cats):
 #     # }
 #     return render(request, 'blog/home.html')
 
+class AboutView(generic.DetailView):
+    model = ProfileSingle
+    template_name = 'blog/about.html'
+
+    def get_object(self):
+        return self.request
+
+class SingleProfileView(generic.DetailView):
+    model = ProfileSingle
+ 
+
+def get_data(request):
+
+    # my_data = ProfileSingle.objects.get(pk=1).bio #for all the records 
+    user_object = ProfileSingle.objects.get(user_name="Michal Struska")
+    bio = user_object.bio
+    profile_image = user_object.profile_image
+
+    context={
+       
+      'bio':bio,
+      'profile_image':profile_image,
+    
+    } 
+
+    return render(request, 'blog/about.html', context)
 
 def about(request):
     return render(request, 'blog/about.html',{'title': 'about'})

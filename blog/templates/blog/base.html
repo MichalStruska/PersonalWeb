@@ -1,164 +1,56 @@
 {% load static %}
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block title %}<title>Michal</title>{% endblock %}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/splash.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% block css %}
+    {% endblock %}
+
+</head>
+<body>
+    
+    <a class="bottomleft splash-link bottom-link" href="about/">About me</a>
+    <a class="bottomright splash-link bottom-link" href="#">some else</a>
+    
+    <a class="topright splash-link" href="#">Publications</a>
+    <a class="topleft splash-link" href="#">Projects</a>
+
+    <div class="content-container center">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+
+    <div class="Navbar" id="bottom-navbar">
+       
+       <nav class="Navbar__Items Navbar-items-center">
+         
+         <a class="bi bi-twitter Navbar__Link" href="https://twitter.com/MichalStruska" target="_blank"></a>
+         <a class="bi bi-facebook Navbar__Link" href="https://www.facebook.com/michal.struska.50" target="_blank"></a>
+         <a class="bi bi-github Navbar__Link" href="https://github.com/MichalStruska/" target="_blank"></a>
+         <a class="Navbar__Link text-link" href="https://www.natur.cuni.cz/biology/anthropology/o-katedre" target="_blank">
+            Dept website
+          </a>
+          <a class="Navbar__Link text-link" href="https://www.natur.cuni.cz/biology/anthropology/pracoviste-katedry/laborator-antropologie-kostni-tkane-en" target="_blank">
+            Lab website
+          </a>
+
+       </nav>
+       <nav class="Navbar__Items Navbar__Items--right">
         
-        <link rel="stylesheet" type="text/css" href="{% static "css/main03.css" %}" />
-        <link rel="stylesheet" type="text/css" href="{% static "css/main04.css" %}">
-        {% block title %}{% endblock %}
-        
-    </head>
+       </nav>
+    </div>
 
-    <header class="site-header">
-        
-
-
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-left" id="navbarID">
-            
-            
-            <div class="collapse navbar-collapse align-items-left" id="navbarSupportedContent">
-                
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>      
-            </div>
-            {% if cat_menu %}
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categories
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    
-                        {% for item in cat_menu %}
-                            <a class="dropdown-item" href="{% url 'category' item|slugify|title %}">{{ item }}</a>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-            {% else %}
-                <a class="nav-link align-items-left" id="pokus" href="{% url 'category-list' %}">Categories <span class="sr-only">(current)</span></a>
-            {% endif %}
-
-        </nav> -->
-            
-
-    </header>
-
-    <body>
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-                
-                <a class="navbar-brand" href="{% url 'blog-home' %}">
-                    <img src="{% static "images/Logo_transparent.png" %}" width="30" height="30" alt="Department logo">
-                    Michal Struška
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="{% static "images/Logo_transparent.png" %}" width="30" height="30" alt="Department logo">
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarToggler">
-                    
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item nav-item-custom">
-                            <a class="nav-item-custom" href="/">About me</a>
-                        </li>
-
-                        <li class="nav-item nav-item-custom">
-                            <a class="nav-item-custom" href="/">Publications</a>
-                        </li>
-
-                        <li class="nav-item nav-item-custom">
-                            <a class="nav-item-custom" href="/">News</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <a class="dropdown-toggle btn-link nav-item-custom" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Projects
-                                </a>
-                                <ul class="dropdown-menu w-200">
-                                    <li><a class="nav-item-custom" href="#">Academia projects</a></li>
-                                    <li><a class="nav-item-custom" href="#">Outside projects</a></li>
-                                </ul>
-                                
-                                
-                            </div>
-                        </li>
-                    </ul>
-                    
-                    <ul class="navbar-nav ml-auto navbar-nav-custom" >
-                        {% if user.is_authenticated %}
-                            <a class="small-link" id="pokus" href="{% url 'add-post' %}">Add post &emsp;<span class="sr-only">(current)</span></a>
-                            <a class="small-link" href="{% url 'add-category' %}">Add category &emsp;<span class="sr-only">(current)</span></a>
-                            {% if user.profile.id %}
-                                <a class="small-link" href="{% url 'edit_profile_page' user.profile.id %}">Edit profile page &emsp;</a>
-                                <a class="small-link" href="{% url 'show_profile_page' user.profile.id %}">Show profile page &emsp;</a>
-                            {% else %}
-                                <a class="small-link" href="{% url 'create_profile_page' %}">Create profile page &emsp;</a>
-                            {% endif %}
-                                <a class="small-link" href="{% url 'edit_profile' %}">Edit settings &emsp;</a>
-                                <a class="small-link" href="{% url 'logout' %}">Logout &emsp;</a>
-    
-                            <!-- <a class="nav-link align-items-right" href="/admin">Admin <span class="sr-only">(current)</span></a> -->
-                        {% else %}
-                            <a class="nav-link" href="{% url 'register' %}">Register &emsp;</a>
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
-                        {% endif %}
-                    </ul>
-
-                </div>
-
-            </nav>
-
-  
-            <!-- <div class="sidenav sidenav-custom">
-                <div class="sidenav-text-area">
-                    <a href="/">About me</a>
-                    <a href="/create">Publications</a>
-                    <a href="/2">News</a>
-                    <div class="dropdown">
-                        <a class="btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Projects
-                        </a>
-                        <ul class="dropdown-menu w-100">
-                            <li><a href="#">Academia projects</a></li>
-                            <li><a href="#">Outside projects</a></li>
-                        </ul>
-                        
-                        
-                    </div>
-                </div>
-                
-            </div> -->
-                
-            <main role="main" class="container">
-                <div class="row justify-content-center" id="content" name="content" class="main">
-                    <div class="col-md-3">
-                        
-                    </div>
-                    <div class="col-md-9">
-                        {% block content %}
-                        {% endblock %}
-                    </div>
-                </div>
-            </main>
+    <a class="bottom-center navbar-toggle">
+      +
+    </a>
 
     
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    </body>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="{% static 'js/toggle_button.js' %}"></script>
     
-    
-</html>
+</body>
+
 

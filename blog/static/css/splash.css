@@ -79,8 +79,7 @@ model-viewer
     height: 50vh;
     aspect-ratio:1/1;
     position:relative;
-    left: 50%;
-    top:50%;
+
 }
 
 .model-move-up
@@ -93,7 +92,7 @@ model-viewer
 
 
 .Navbar {
-    background-color: #413f3f;
+    background-color: #7269b8;
     display: none;
     padding: 16px;
     font-family: sans-serif;
@@ -160,6 +159,14 @@ model-viewer
     text-decoration: none;
   }
 
+  .content-container
+  {
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    top:40%;
+  }
+
 
   @media only screen and (hover: none) and (pointer: coarse) {
     
@@ -181,6 +188,11 @@ model-viewer
         height: 50vh;
         aspect-ratio:1/1;
         position: relative;
+        top: 25%;
+    }
+
+    .navbar-toggle-move-up
+    {
         top: 25%;
     }
 
@@ -277,3 +289,4 @@ model-viewer
       
     }
   }
+

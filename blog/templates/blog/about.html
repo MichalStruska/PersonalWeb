@@ -1,6 +1,15 @@
+{% extends "blog/base.html" %}
 {% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
 {% block content %}
-    <link rel="stylesheet" href="{% static "css/about.css" %}" />
-    <h1>About page</h1>
-    <p>Include info about page</p>
+    <div class="about-text"> 
+        <h1>About me</h1>
+        <p>{{bio}}</p>
+    </div>
+    <img src="{{ profile_image.url }}" class="profile-image">
+
+    
 {% endblock content %}
