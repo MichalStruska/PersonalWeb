@@ -164,6 +164,7 @@ model-viewer
     position: relative;
     transform: translate(-50%, -50%);
     width: max-content;
+    height: max-content;
     top:40%;
   }
   
@@ -172,6 +173,7 @@ model-viewer
     position: relative;
     transform: translate(-50%, -50%);
     width: max-content;
+    height: max-content;
     top:35%;
   }
 

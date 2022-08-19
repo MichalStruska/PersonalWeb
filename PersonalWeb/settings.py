@@ -154,6 +154,6 @@ LOGIN_REDIRECT_URL = 'blog-home'
 LOGOUT_REDIRECT_URL = 'blog-home'
 
  
-if '/app' in os.environ['HOME']:
-        import django_on_heroku
-        django_on_heroku.settings(locals())
+# if '/app' in os.environ['HOME']:
+#         import django_on_heroku
+#         django_on_heroku.settings(locals())
