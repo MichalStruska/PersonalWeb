@@ -1,36 +1,32 @@
+.profile-card
+{
+    top:50%;
+    left:50%;
+    border-radius: 4%;
+    border: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 3px;
+    width: 60vw;
+}
+
+.profile-card-content
+{    
+    margin: 10%;
+}
+
 .about-text
 {
     font-family: Helvetica;
-    color:blueviolet;
-    width: 50vw;
+    color:rgb(0, 0, 0);
     
 }
 
 .profile-image
-{
-    width: 30vw;
-    
-    border-radius: 10%;
+{    
+    border-radius: 4%;
     border: solid;
     border-color: rgb(22, 22, 22);
-    border-width: 1px;
-}
-
-.profile-card
-{
-    width: max-content;   
-    height: max-content;
-    border-radius: 10%;
-    border: solid;
-    border-color: rgb(119, 119, 119);
-    border-width: 1px;
-}
-
-.profile-card-content
-{
-    width: max-content;   
-    height: max-content;
-    
-    margin: 10%;
+    border-width: 3px;
+    width: 30vw;
 }
 
