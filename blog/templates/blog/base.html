@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{% static 'css/splash.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
 
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    
     {% block css %}
     {% endblock %}
 
@@ -17,12 +19,11 @@
     <a class="topright splash-link" href="#">Publications</a>
     <a class="topleft splash-link" href="#">Projects</a>
 
-    <div class="content-container center">
+    <div class="content-container-down center" id="content-container">
         {% block content %}
         {% endblock %}
     </div>
     
-
     <div class="Navbar" id="bottom-navbar">
        
        <nav class="Navbar__Items Navbar-items-center">
@@ -47,9 +48,8 @@
       +
     </a>
 
-    
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="{% static 'js/toggle_button.js' %}"></script>
+
     
 </body>
 

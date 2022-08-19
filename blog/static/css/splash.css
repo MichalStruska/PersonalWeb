@@ -159,12 +159,20 @@ model-viewer
     text-decoration: none;
   }
 
-  .content-container
+  .content-container-down
   {
     position: relative;
     transform: translate(-50%, -50%);
     width: max-content;
     top:40%;
+  }
+  
+  .content-container-up
+  {
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    top:25%;
   }
 
 
@@ -183,7 +191,7 @@ model-viewer
         top:50%;
     }
 
-    .model-move-up
+    .content-move-up
     {
         height: 50vh;
         aspect-ratio:1/1;
@@ -193,7 +201,10 @@ model-viewer
 
     .navbar-toggle-move-up
     {
-        top: 25%;
+        bottom: 42%;
+        left: 50%;
+        position: absolute;
+        color: #69b87d;
     }
 
     .Navbar__ToggleShow {

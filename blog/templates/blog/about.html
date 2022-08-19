@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="about-text"> 
-        <h1>About me</h1>
-        <p>{{bio}}</p>
+    <div class="profile-card">
+        <div class="profile-card-content">
+            <img src="{{ profile_image.url }}" class="profile-image">
+            <div class="about-text"> 
+                <h1>About me</h1>
+                <p>{{bio}}</p>
+            </div>
+        </div>
     </div>
-    <img src="{{ profile_image.url }}" class="profile-image">
-
     
 {% endblock content %}

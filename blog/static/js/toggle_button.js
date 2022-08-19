@@ -1,13 +1,5 @@
 var isShown = false;
 function classToggle() {
-    const navs = document.querySelectorAll('.Navbar__Items');
-    const bottom_links = document.querySelectorAll('.bottom-link');
-    const navBar = document.getElementById("bottom-navbar");
-    console.log(isShown);
-    navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
-    bottom_links.forEach(bottom_links => bottom_links.classList.toggle('bottom-link-move-up'));
-    navBar.classList.toggle('Navbar__ToggleShow');
-    document.getElementById("3D-model").classList.toggle('model-move-up');
     if (isShown) {
         moveDown();
     }
@@ -15,6 +7,17 @@ function classToggle() {
     {
         moveUp();
     }
+    
+    const navs = document.querySelectorAll('.Navbar__Items');
+    const bottom_links = document.querySelectorAll('.bottom-link');
+    const navBar = document.getElementById("bottom-navbar");
+    console.log(isShown);
+    navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+    bottom_links.forEach(bottom_links => bottom_links.classList.toggle('bottom-link-move-up'));
+    navBar.classList.toggle('Navbar__ToggleShow');
+    document.getElementById("content-container").classList.toggle('content-container-down');
+    document.getElementById("content-container").classList.toggle('content-container-up');
+
   }
   
 function moveUp() {

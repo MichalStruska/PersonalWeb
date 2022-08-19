@@ -10,9 +10,27 @@
 {
     width: 30vw;
     
-    border-radius: 50%;
+    border-radius: 10%;
     border: solid;
-    border-color: blueviolet;
-    border-width: 5px;
+    border-color: rgb(22, 22, 22);
+    border-width: 1px;
+}
+
+.profile-card
+{
+    width: max-content;   
+    height: max-content;
+    border-radius: 10%;
+    border: solid;
+    border-color: rgb(119, 119, 119);
+    border-width: 1px;
+}
+
+.profile-card-content
+{
+    width: max-content;   
+    height: max-content;
+    
+    margin: 10%;
 }
 
