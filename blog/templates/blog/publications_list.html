@@ -1,0 +1,27 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}<title>Michal-splash</title>{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/publication_list.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="publication-list-container">
+        {% for pub in publication_list  %}
+            <div class="publication-card">
+                <p class="publication-title">{{ pub.title }}</p>
+                <p class="publication-authors">{{ pub.author }}</p>
+                {% if pub.snippet %}
+                    <a class="publication-snippet">{{ pub.snippet }}</a>
+                {% endif %}
+                
+                {% if pub.link %}
+                    <a class="publication-link" href="{{ pub.link }}" target="_blank">pdf</a>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+

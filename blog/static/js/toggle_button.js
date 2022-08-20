@@ -27,7 +27,7 @@ function moveUp() {
     }
     else
     {
-        document.querySelector('.navbar-toggle').style.bottom = "30%";
+        document.querySelector('.navbar-toggle').style.bottom = "25%";
     }
     document.querySelector('.navbar-toggle').innerHTML = "x";
     
@@ -44,7 +44,7 @@ function IsPhone()
 }
 
 function moveDown() {
-    document.querySelector('.navbar-toggle').style.bottom = "10%";
+    document.querySelector('.navbar-toggle').style.bottom = "5%";
     document.querySelector('.navbar-toggle').innerHTML = "+";
     isShown = false;
 }

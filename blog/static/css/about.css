@@ -6,20 +6,21 @@
     border: solid;
     border-color: rgb(131, 23, 23);
     border-width: 3px;
-    width: 60vw;
+    width: 40vw;
     height: 30vw;
 }
 
 .profile-card-content
 {    
     margin: 5%;
+    
 }
 
 .about-text
 {
     font-family: Helvetica;
     color:rgb(0, 0, 0);
-    
+    float: none;
 }
 
 .profile-image
@@ -29,5 +30,7 @@
     border-color: rgb(219, 20, 20);
     border-width: 3px;
     height: 40%;
+    float: left;
+    margin-right: 5%;
 }
 

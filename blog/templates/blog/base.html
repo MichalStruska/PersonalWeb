@@ -13,10 +13,10 @@
 </head>
 <body>
     
-    <a class="bottomleft splash-link bottom-link" href="about/">About me</a>
-    <a class="bottomright splash-link bottom-link" href="#">some else</a>
+    <a class="bottomleft splash-link bottom-link" href="{% url 'about' %}">About me</a>
+    <a class="bottomright splash-link bottom-link" href="{% url 'splash' %}">Home</a>
     
-    <a class="topright splash-link" href="#">Publications</a>
+    <a class="topright splash-link" href="{% url 'publications' %}">Publications</a>
     <a class="topleft splash-link" href="#">Projects</a>
 
     <div class="content-container-down center" id="content-container">
@@ -48,7 +48,21 @@
       +
     </a>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01">
+
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+    </div>
+
     <script src="{% static 'js/toggle_button.js' %}"></script>
+    <script src="{% static 'js/image_zoom.js' %}"></script>
 
     
 </body>

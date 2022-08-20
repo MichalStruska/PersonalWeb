@@ -55,6 +55,8 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
+
+
 class ProfileSingle(models.Model):
     user_name = models.CharField(max_length=255, null=True, blank=True)
     first_name = models.CharField(max_length=255, null=True, blank=True)
@@ -70,6 +72,22 @@ class ProfileSingle(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog-home')
+
+class Publication(models.Model):
+    title = models.CharField(max_length=255, null=True, blank=True)
+    author = models.CharField(max_length=255, null=True, blank=True)
+    description = models.TextField(max_length=1000, null=True, blank=True)
+    snippet = models.TextField(max_length=500, null=True, blank=True)
+    image = models.ImageField(null = True, blank = True, upload_to = "images/publication/")
+    link = models.CharField(max_length=255, null=True, blank=True)
+    date = models.DateField(null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('blog-home')
+
+    def __str__(self):
+        return self.title
+
 
 class Category(models.Model):
     name = models.CharField(max_length=200, unique=True, null=True, blank=True)

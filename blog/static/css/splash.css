@@ -92,7 +92,7 @@ model-viewer
 
 
 .Navbar {
-    background-color: #7269b8;
+    background-color: #696969;
     display: none;
     padding: 16px;
     font-family: sans-serif;
@@ -165,7 +165,7 @@ model-viewer
     transform: translate(-50%, -50%);
     width: max-content;
     height: max-content;
-    top:40%;
+    top:50%;
   }
   
   .content-container-up

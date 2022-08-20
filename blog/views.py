@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Post, Category, Profile, ProfileSingle
+from .models import Post, Category, Profile, ProfileSingle, Publication
 from .forms import PostForm, EditForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -79,24 +79,12 @@ def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats, status=1)
     return render(request, 'blog/categories.html', {'cats':cats, 'category_posts':category_posts})
 
-# def home(request):
-#     # context = {
-#     #     'posts': posts
-#     # }
-#     return render(request, 'blog/home.html')
 
-class AboutView(generic.DetailView):
-    model = ProfileSingle
-    template_name = 'blog/about.html'
-
-    def get_object(self):
-        return self.request
 
 class SingleProfileView(generic.DetailView):
     model = ProfileSingle
  
-
-def get_data(request):
+def about(request):
 
     # my_data = ProfileSingle.objects.get(pk=1).bio #for all the records 
     user_object = ProfileSingle.objects.get(user_name="Michal Struska")
@@ -112,8 +100,32 @@ def get_data(request):
 
     return render(request, 'blog/about.html', context)
 
-def about(request):
-    return render(request, 'blog/about.html',{'title': 'about'})
+class PublicationList(generic.ListView):
+    model = Publication
+    queryset = Publication.objects.order_by('date')
+    template_name = 'blog/publications_list.html'
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        publication_list = Publication.objects.all()
+        context = super(PublicationList, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        context["publication_list"] = publication_list
+        return context
+
+class PublicationDetail(generic.DetailView):
+    model = Publication
+    template_name = 'blog/publication_detail.html'
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        
+        stuff = get_object_or_404(Publication, id=self.kwargs['pk'])
+
+        context = super(PublicationDetail, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
 
 def splash(request):
     return render(request, 'blog/splash.html',{'title': 'splash'})
