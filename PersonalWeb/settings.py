@@ -141,10 +141,11 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_DIRS = (
-    # STATIC_PATH,
-    STATIC_PATH02,
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# STATICFILES_DIRS = (
+#     # STATIC_PATH,
+#     STATIC_PATH02,
+# )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
