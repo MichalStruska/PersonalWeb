@@ -2,10 +2,7 @@
 {
     top: 40%;
     left: 50%;
-    border-radius: 4%;
-    /* border: solid; */
-    border-color: rgb(96, 96, 96);
-    border-width: 1px;
+    
     width: 70vw;
     height: 30vw;
     overflow: auto;
@@ -20,7 +17,7 @@
 .publication-title
 {
     font-family: Helvetica;
-    color:rgb(198, 0, 0);
+    color:rgb(173, 5, 5);
     float: none;
 }
 
@@ -40,7 +37,12 @@
     font-family: Helvetica;
     color:rgb(31, 131, 63);
     text-decoration: none;
-    font-size: 12;
+    font-size: 2vh;
+}
+
+a
+{
+    font-size: 2.5vh;
 }
 
 
@@ -79,3 +81,41 @@
     margin-right: 30px;
 }
 
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape)
+{
+    .publication-list-container
+    {
+        top: 40%;
+        left: 50%;
+        
+        width: 50vw;
+        height: 20vw;
+        overflow: auto;
+    }
+
+    a
+    {
+        font-size: 3vh;
+    }
+
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait)
+{
+    .publication-list-container
+    {
+        top: 40%;
+        left: 50%;
+        
+        width: 80vw;
+        height: 90vw;
+        overflow: auto;
+    }
+
+    a
+    {
+        font-size: 2vh;
+    }
+
+}

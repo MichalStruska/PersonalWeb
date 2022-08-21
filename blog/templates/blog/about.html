@@ -2,7 +2,7 @@
 {% load static %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
-    <link rel="stylesheet" href="{% static 'css/image_zoom.css' %}">
+    
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
         <img src="{{ profile_image.url }}" id="myImg" class="profile-image profile-card-content">
         <div class="about-text profile-card-content"> 
             <h1>About me</h1>
-            <p>{{ bio|linebreaksbr }}</p>
+            <p><a>{{ bio|linebreaksbr }}</a></p>
         </div>
     </div>
 

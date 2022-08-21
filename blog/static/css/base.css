@@ -74,12 +74,12 @@
 .splash-link
 {
     color:rgb(41, 41, 41);
-    font-size: large;
+    font-size: 16pt;
 }
 
-.splash-link:hover
+.splash-link:hover, .navbar-link:hover
 {
-    color:rgb(235, 24, 129);
+    color:rgb(0, 109, 121);
 }
 
 model-viewer
@@ -96,7 +96,6 @@ model-viewer
     aspect-ratio:1/1;
     position:relative;
     
-
 }
 
 
@@ -126,7 +125,7 @@ model-viewer
     transition: transform .2s ease-out;
   }
 
-  .Navbar__Link {
+  .navbar-link {
     padding-right: 0;
     text-align: center;
     padding-bottom: 2px;
@@ -157,12 +156,6 @@ model-viewer
     color: rgb(196, 196, 196);
     text-decoration: none;
   }
-  
-  .bi:hover, .text-link:hover
-  {
-    color: rgb(199, 7, 7);
-    text-decoration: none;
-  }
 
   .content-container
   {
@@ -181,35 +174,42 @@ model-viewer
   }
 
 
-  @media only screen and (hover: none) and (pointer: coarse) {
+  @media only screen and (hover: none) and (pointer: coarse)
+  {
+  
     
+
+    .navbar-link
+    {
+      padding-bottom: .5vh;
+      font-size: 3vh;
+
+    }
   }
 
   @media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape)
   {
-    .model
+    .content-container
     {
-        width: 60vw;
-        aspect-ratio:1/1;
-        position:relative;
-        left: 50%;
-        top:50%;
+        position: relative;
+        transform: translate(-50%, 0%);
+        transition: transform .2s ease-out;
+        width: max-content;
+        height: max-content;
+        top:20%;
     }
-
+    .content-container.content-container-up
+    {
+        transform: translate(-50%, -40%);
+        transition: transform .2s ease-out;  
+    }
+    
     .content-move-up
     {
         height: 50vh;
         aspect-ratio:1/1;
         position: relative;
         top: 25%;
-    }
-
-    .navbar-toggle-move-up
-    {
-        bottom: 42%;
-        left: 50%;
-        position: absolute;
-        color: #69b87d;
     }
 
     .Navbar__ToggleShow {
@@ -219,22 +219,39 @@ model-viewer
       
     }
 
-    .bottom-link-move-up
+    .bottom-link.bottom-link-move-up
     {
-        position: absolute;
-        bottom: 42%;
+        /* position: absolute; */
+        transform: translateY(-420%);
+        transition: transform .2s ease-out;
+    }
+
+    .bottom-link.bottom-link-move-up.horizontal-center
+    {
+        transform: translate(-50%,-350%) rotate(320deg);
+        transition: transform .2s ease-out;
+    }
+
+    .navbar.active
+    {
+      transform: translateY(0%);
+   
+      transition: transform .2s ease-out;
+    }
+
+    .navbar {
+      height: 35%;
     }
   }
 
   @media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait)
   {
-    .big-model
+    .model
     {
         width: 60vw;
         aspect-ratio:1/1;
         position:relative;
-        left: 50%;
-        top:50%;
+     
     }
 
     .model-move-up
@@ -248,7 +265,7 @@ model-viewer
     .splash-link
     {
       color: blue;
-      font-size: 50px;
+      font-size: 30pt;
     }
 
     .topright
@@ -279,12 +296,20 @@ model-viewer
         left: 15px;
     }
 
-    .bottom-link-move-up
+    .bottom-link.bottom-link-move-up
     {
-        position: absolute;
-        bottom: 30%;
+        /* position: absolute; */
+        transform: translateY(-500%);
+        transition: transform .2s ease-out;
     }
 
+    .bottom-link.bottom-link-move-up.horizontal-center
+    {
+        transform: translate(-50%,-20vh) rotate(320deg);
+        transition: transform .2s ease-out;
+    }
+
+   
     .navbar-toggle {
       display: initial;
       cursor: pointer;
@@ -294,7 +319,7 @@ model-viewer
 
     .Navbar__Link
     {
-      font-size: 50px;
+      font-size: 12pt;
       padding: 10px;
     }
 
@@ -304,5 +329,16 @@ model-viewer
       height: 25%;
       
     }
+
+    .navbar.active
+    {
+      transform: translateY(0%);
+      transition: transform .2s ease-out;
+    }
+
+    .navbar {
+      height: 23vh;
+    }
+
   }
 

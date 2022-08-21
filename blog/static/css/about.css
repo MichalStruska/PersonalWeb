@@ -3,13 +3,12 @@
     top:50%;
     left:50%;
     border-radius: 4%;
-    border: solid;
-    border-color: rgb(88, 88, 88);
+    /* border: solid; */
+    border-color: rgb(162, 18, 18);
     border-width: 3px;
     width: 40vw;
     height: 30vw;
     overflow: auto;
-    
 }
 
 .profile-card-content
@@ -35,4 +34,98 @@
     float: left;
     margin-right: 5%;
 }
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait)
+  {
+    .profile-card
+    {
+        
+        border-radius: 4%;
+        /* border: solid; */
+        border-color: rgb(162, 18, 18);
+        border-width: 3px;
+        width: 70vw;
+        height: 45vh;
+        overflow: auto;
+    }
+
+    .profile-card-content
+    {    
+        margin: 5%;    
+    }
+
+    .about-text
+    {
+        font-family: Helvetica;
+        color:rgb(0, 0, 0);
+        float: none;
+        
+    }
+
+    .profile-image
+    {    
+        border-radius: 4%;
+        border: solid;
+        border-color: rgb(92, 92, 92);
+        border-width: 3px;
+        height: 40%;
+        float: left;
+        margin-right: 5%;
+    }
+
+    a
+    {
+        font-size: 2vh;
+    }
+
+    h1
+    {
+        font-size: 3vh;
+    }
+  }
+
+  @media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape)
+  {
+    .profile-card
+    {
+        
+        width: 70vw;
+        height: 40vh;
+        overflow: auto;
+    }
+
+    .profile-card-content
+    {    
+        margin: 5%;    
+    }
+
+    .about-text
+    {
+        font-family: Helvetica;
+        color:rgb(0, 0, 0);
+        float: none;
+        
+    }
+
+    .profile-image
+    {    
+        border-radius: 4%;
+        border: solid;
+        border-color: rgb(92, 92, 92);
+        border-width: 3px;
+        height: 50vh;
+        float: left;
+        margin-right: 5%;
+    }
+
+    a
+    {
+        font-size: 3vh;
+    }
+
+    h1
+    {
+        font-size: 4vh;
+    }
+  }
 
