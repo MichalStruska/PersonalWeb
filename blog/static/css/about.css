@@ -4,16 +4,17 @@
     left:50%;
     border-radius: 4%;
     border: solid;
-    border-color: rgb(131, 23, 23);
+    border-color: rgb(88, 88, 88);
     border-width: 3px;
     width: 40vw;
     height: 30vw;
+    overflow: auto;
+    
 }
 
 .profile-card-content
 {    
-    margin: 5%;
-    
+    margin: 5%;    
 }
 
 .about-text
@@ -21,13 +22,14 @@
     font-family: Helvetica;
     color:rgb(0, 0, 0);
     float: none;
+    
 }
 
 .profile-image
 {    
     border-radius: 4%;
     border: solid;
-    border-color: rgb(219, 20, 20);
+    border-color: rgb(92, 92, 92);
     border-width: 3px;
     height: 40%;
     float: left;

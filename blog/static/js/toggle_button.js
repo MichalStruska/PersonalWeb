@@ -1,21 +1,18 @@
 var isShown = false;
 function classToggle() {
-    if (isShown) {
-        moveDown();
-    }
-    else
-    {
-        moveUp();
-    }
+    // if (isShown) {
+    //     moveDown();
+    // }
+    // else
+    // {
+    //     moveUp();
+    // }
     
-    const navs = document.querySelectorAll('.Navbar__Items');
     const bottom_links = document.querySelectorAll('.bottom-link');
     const navBar = document.getElementById("bottom-navbar");
-    console.log(isShown);
-    navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+
     bottom_links.forEach(bottom_links => bottom_links.classList.toggle('bottom-link-move-up'));
-    navBar.classList.toggle('Navbar__ToggleShow');
-    document.getElementById("content-container").classList.toggle('content-container-down');
+    navBar.classList.toggle('active');
     document.getElementById("content-container").classList.toggle('content-container-up');
 
   }

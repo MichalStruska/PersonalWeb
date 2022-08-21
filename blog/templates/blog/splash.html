@@ -2,14 +2,8 @@
 {% load static %}
 {% block title %}<title>Michal-splash</title>{% endblock %}
 
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/splash.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
-
-</head>
 {% block content %}
-<div class="big-model" id="3D-model">
+<div class="model" id="3D-model">
   <model-viewer alt="skull" src="{% static 'images/paranthropus.glb' %}" disable-pan interaction-prompt="none" autoplay auto-rotate camera-orbit="310deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer>
   <!-- <model-viewer alt="skull" src="{% static 'images/male_runner04.glb' %}" enable-pan align-model="center" interaction-prompt="none" autoplay animation-name="Run02" auto-rotate camera-orbit="100deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer> -->
 </div>

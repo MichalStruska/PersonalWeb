@@ -11,34 +11,16 @@
     overflow: auto;
 }
 
-.content-container-down
-  {
-    position: relative;
-    transform: translate(-50%, -50%);
-    width: max-content;
-    height: max-content;
-    top:50%;
-  }
-  
-  .content-container-up
-  {
-    position: relative;
-    transform: translate(-50%, -50%);
-    width: max-content;
-    height: max-content;
-    top:35%;
-  }
-
 .publication-card
 {    
     margin: 5%;
-    
+    text-align: center;
 }
 
 .publication-title
 {
     font-family: Helvetica;
-    color:rgb(0, 0, 0);
+    color:rgb(198, 0, 0);
     float: none;
 }
 
@@ -76,7 +58,7 @@
 }
     
 .publication-list-container::-webkit-scrollbar-thumb {
-    background-color: rgb(30, 32, 52);
+    background-color: rgb(111, 111, 111);
     border-left: none;
     border-radius: 9999px;
     width: 3px;

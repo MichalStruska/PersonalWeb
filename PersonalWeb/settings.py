@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["10.0.1.15",
                  "127.0.0.1"]
 
 
+
 # Application definition
 
 INSTALLED_APPS = [

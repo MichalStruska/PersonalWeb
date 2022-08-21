@@ -9,11 +9,17 @@
     <div class="publication-list-container">
         {% for pub in publication_list  %}
             <div class="publication-card">
-                <p class="publication-title">{{ pub.title }}</p>
-                <p class="publication-authors">{{ pub.author }}</p>
-                {% if pub.snippet %}
-                    <a class="publication-snippet">{{ pub.snippet }}</a>
+                
+                
+                <a>{{ pub.author }}</a>
+                <a>({{ pub.publication_date|date:"Y" }}).</a></br>
+                {% if pub.description %}
+                    <a class="publication-title" href="{% url 'publication-detail' pub.pk %}">{{ pub.title }}</a></br>
+                {% else %}
+                    <a class="publication-title" href="{% url 'publication-detail' pub.pk %}">{{ pub.title }}</a></br>
                 {% endif %}
+                <a>{{ pub.journal }},</a>
+                <a>{{ pub.pages }}.</a></br>
                 
                 {% if pub.link %}
                     <a class="publication-link" href="{{ pub.link }}" target="_blank">pdf</a>

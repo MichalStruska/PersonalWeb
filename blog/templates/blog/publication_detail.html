@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}<title>Michal-splash</title>{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/publication_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/publication_list.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="publication-list-container">
+        <h1 class="title">{{ title }}</h1>
+        <h2>{{ author }}</h2>
+        <p>{{ description|safe|linebreaksbr }}</p>
+    </div>
+{% endblock content %}

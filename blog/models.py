@@ -76,12 +76,16 @@ class ProfileSingle(models.Model):
 class Publication(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     author = models.CharField(max_length=255, null=True, blank=True)
-    description = models.TextField(max_length=1000, null=True, blank=True)
+    description = RichTextField(max_length=2000, null=True, blank=True)
     snippet = models.TextField(max_length=500, null=True, blank=True)
     image = models.ImageField(null = True, blank = True, upload_to = "images/publication/")
     link = models.CharField(max_length=255, null=True, blank=True)
-    date = models.DateField(null=True, blank=True)
+    publication_date = models.DateField(null=True, blank=True)
+    pages = models.CharField(max_length=255, null=True, blank=True)
+    journal = models.CharField(max_length=255, null=True, blank=True)
 
+    class Meta:
+        ordering = ['-publication_date']
     def get_absolute_url(self):
         return reverse('blog-home')
 
