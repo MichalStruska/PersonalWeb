@@ -7,11 +7,12 @@
 
 {% block content %}
     <div class="profile-card">
-        <img src="{{ profile_image.url }}" id="myImg" class="profile-image profile-card-content">
         <div class="about-text profile-card-content"> 
             <h1>About me</h1>
             <p><a>{{ bio|linebreaksbr }}</a></p>
+            
         </div>
+        <img src="{{ profile_image.url }}" id="myImg" class="profile-image profile-card-content">
     </div>
 
 {% endblock content %}
