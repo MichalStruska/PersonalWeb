@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('members/', include('django.contrib.auth.urls')),
     path('members/', include('members.urls')),
-    path('ckeditor/', include('ckeditor_uploader.urls'))
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('tinymce/', include('tinymce.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -10,7 +10,7 @@ function classToggle() {
     
     const bottom_links = document.querySelectorAll('.bottom-link');
     const navBar = document.getElementById("bottom-navbar");
-
+    console.log("ahoj");
     bottom_links.forEach(bottom_links => bottom_links.classList.toggle('bottom-link-move-up'));
     navBar.classList.toggle('active');
     document.getElementById("content-container").classList.toggle('content-container-up');
