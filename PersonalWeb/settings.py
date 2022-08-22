@@ -138,7 +138,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_PATH = os.path.join(BASE_DIR,'static')
-STATIC_PATH02 = os.path.join(BASE_DIR, 'blog', 'static')
+# STATIC_PATH02 = os.path.join(BASE_DIR, 'blog', 'static')
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
@@ -146,6 +146,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = (
 #     # STATIC_PATH,
 #     STATIC_PATH02,
@@ -160,9 +161,9 @@ LOGIN_REDIRECT_URL = 'blog-home'
 LOGOUT_REDIRECT_URL = 'blog-home'
 
  
-# if '/app' in os.environ['HOME']:
-#         import django_on_heroku
-#         django_on_heroku.settings(locals())
+if '/app' in os.environ['HOME']:
+        import django_on_heroku
+        django_on_heroku.settings(locals())
 
 
 
