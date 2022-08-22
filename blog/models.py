@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django_extensions.db.fields import AutoSlugField
 from django.urls import reverse
 
@@ -76,7 +77,7 @@ class ProfileSingle(models.Model):
 class Publication(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     author = models.CharField(max_length=255, null=True, blank=True)
-    description = RichTextField(max_length=2000, null=True, blank=True)
+    description = RichTextUploadingField(max_length=2000, null=True, blank=True)
     snippet = models.TextField(max_length=500, null=True, blank=True)
     image = models.ImageField(null = True, blank = True, upload_to = "images/publication/")
     link = models.CharField(max_length=255, null=True, blank=True)
