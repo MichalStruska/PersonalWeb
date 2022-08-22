@@ -15,7 +15,7 @@ from pathlib import Path
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-#BASE_DIR = os.path.abspath(__file__) 
+#BASE_DIR = os.path.abspath(__file__)
 BASE_DIR = Path(__file__).parent.absolute()
 
 # Quick-start development settings - unsuitable for production
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'members',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -159,3 +160,15 @@ LOGOUT_REDIRECT_URL = 'blog-home'
 if '/app' in os.environ['HOME']:
         import django_on_heroku
         django_on_heroku.settings(locals())
+
+
+
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
