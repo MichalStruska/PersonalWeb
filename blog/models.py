@@ -17,7 +17,9 @@ class ProfileSingle(models.Model):
     facebook_link = models.CharField(max_length=255, null=True, blank=True)
     twitter_link = models.CharField(max_length=255, null=True, blank=True)
     instagram_link = models.CharField(max_length=255, null=True, blank=True)
-    website_link = models.CharField(max_length=255, null=True, blank=True)
+    github_link = models.CharField(max_length=255, null=True, blank=True)
+    department_link = models.CharField(max_length=255, null=True, blank=True)
+    laboratory_link = models.CharField(max_length=255, null=True, blank=True)
     location = models.CharField(max_length=30,null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
 

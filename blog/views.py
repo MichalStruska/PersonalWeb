@@ -1,3 +1,4 @@
+from cProfile import Profile
 from django.shortcuts import render
 from django.views import generic
 from .models import Category, ProfileSingle, Publication
@@ -50,7 +51,23 @@ class PublicationDetail(generic.DetailView):
         return context
 
 
-def splash(request):
-    return render(request, 'blog/splash.html',{'title': 'splash'})
+class Splash(generic.DetailView):
+    model = ProfileSingle
+    template_name = 'blog/splash.html'
+
+    def get_context_data(self, *args, **kwargs):
+        user_object = ProfileSingle.objects.get(user_name="Michal Struska")
+        
+        context={
+        'facebook_link':user_object.facebook_link,
+        'twitter_link':user_object.twitter_link,
+        'github_link':user_object.github_link,
+        'instagram_link':user_object.instagram_link,
+        'department_link':user_object.department_link,
+        'laboratory_link':user_object.laboratory_link,
+        } 
+
+        return context
+
 
 
