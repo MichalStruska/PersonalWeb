@@ -8,7 +8,6 @@ django-inline-media
 django_on_heroku==1.1.2
 django-storages
 django-summernote
-django-tinymce
 gunicorn==19.9.0
 psycopg2==2.7.5
 python-decouple==3.1
