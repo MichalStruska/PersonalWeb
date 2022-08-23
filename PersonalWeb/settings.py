@@ -174,3 +174,5 @@ AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+
+TEMPLATES[0]['OPTIONS']['context_processors'].append("blog.context_processors.basic_info_process")

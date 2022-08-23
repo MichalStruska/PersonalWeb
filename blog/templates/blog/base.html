@@ -34,15 +34,28 @@
        
        <nav class="Navbar-items-center">
          
-         <a class="bi bi-twitter navbar-link" href="https://twitter.com/MichalStruska" target="_blank"></a>
-         <a class="bi bi-facebook navbar-link" href="https://www.facebook.com/michal.struska.50" target="_blank"></a>
-         <a class="bi bi-github navbar-link" href="https://github.com/MichalStruska/" target="_blank"></a>
-         <a class="navbar-link text-link" href="https://www.natur.cuni.cz/biology/anthropology/o-katedre" target="_blank">
+        {% if twitter_link %}
+          <a class="bi bi-twitter navbar-link" href="{{ twitter_link }}" target="_blank"></a>
+        {% endif %}
+        {% if facebook_link %}
+          <a class="bi bi-facebook navbar-link" href="{{ facebook_link }}" target="_blank"></a>
+        {% endif %}
+        {% if github_link %}
+          <a class="bi bi-github navbar-link" href="{{ github_link }}" target="_blank"></a>
+        {% endif %}
+        {% if instagram_link %}
+          <a class="bi bi-github navbar-link" href="{{ instagram_link }}" target="_blank"></a>
+        {% endif %}
+        {% if department_link %}
+          <a class="navbar-link text-link" href="{{ department_link }}" target="_blank">
             Dept website
           </a>
-          <a class="navbar-link text-link" href="https://www.natur.cuni.cz/biology/anthropology/pracoviste-katedry/laborator-antropologie-kostni-tkane-en" target="_blank">
+        {% endif %}
+        {% if laboratory_link %}
+          <a class="navbar-link text-link" href="{{ laboratory_link }}" target="_blank">
             Lab website
           </a>
+        {% endif %}
 
        </nav>
        
