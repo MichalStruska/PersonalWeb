@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'storages',
-    'tinymce',
     'django_summernote'
 ]
 
