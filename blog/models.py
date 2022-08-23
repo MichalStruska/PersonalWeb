@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from ckeditor.fields import RichTextField
 from django_extensions.db.fields import AutoSlugField
 from django.urls import reverse
 
