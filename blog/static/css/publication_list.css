@@ -47,41 +47,6 @@ a
 
 
 
-.publication-list-container::-webkit-scrollbar {
-    display: block;
-    border-radius: 5%;
-    width: 15px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.publication-list-container::-webkit-scrollbar-track {
-    background: transparent;
-    width: 20px;
-}
-    
-.publication-list-container::-webkit-scrollbar-thumb {
-    background-color: rgb(111, 111, 111);
-    border-left: none;
-    border-radius: 9999px;
-    width: 3px;
-    border: 24px;
-    background-clip: padding-box;
-}
-
-.publication-list-container::-webkit-scrollbar-track-piece:end {
-    background: transparent;
-    margin-bottom: 30px; 
-    margin-right: 30px; 
-    
-}
-
-.publication-list-container::-webkit-scrollbar-track-piece:start {
-    background: transparent;
-    margin-top: 30px;
-    margin-right: 30px;
-}
-
-
 @media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape)
 {
     .publication-list-container

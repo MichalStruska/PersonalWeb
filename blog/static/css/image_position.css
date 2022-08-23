@@ -1,0 +1,19 @@
+.image-right
+{
+    float: right;
+    margin-right: 10%;
+}
+
+.image-left
+{
+    float: left;
+    margin-left: 10%;
+}
+
+.image-center
+{
+    width: 50%;
+    height:auto;
+    margin-left: 25%;
+    background: blue;
+}

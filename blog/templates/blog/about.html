@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block content %}
-    <div class="profile-card">
+    <div class="profile-card scrollable-container">
         <div class="about-text profile-card-content"> 
             <h1>About me</h1>
             <p><a>{{ bio|linebreaksbr }}</a></p>
             
         </div>
-        <img src="{{ profile_image.url }}" id="myImg" class="profile-image profile-card-content">
+        <img src="{{ profile_image.url }}" id="myImg" class="profile-image profile-card-content zoomable-hover">
     </div>
 
 {% endblock content %}

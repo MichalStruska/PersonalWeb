@@ -48,10 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'ckeditor_uploader',
-    'members',
     'storages',
     'tinymce',
+    'django_summernote'
 ]
 
 CKEDITOR_UPLOAD_PATH="uploads/"

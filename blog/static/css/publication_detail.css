@@ -1,4 +1,3 @@
-
 h1
 {
     color: rgb(0, 0, 0);
@@ -9,26 +8,6 @@ h2
 {
     color: rgb(0, 0, 0);
     font-size: 15pt;
-}
-
-.image-right
-{
-    float: right;
-    margin-right: 10px;
-}
-
-.image-left
-{
-    float: left;
-    margin-left: 10px;
-}
-
-.image-center
-{
-    width: 50%;
-    height:auto;
-    margin-left: 25%;
-    background: blue;
 }
 
 .pub-image
