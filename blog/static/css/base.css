@@ -106,7 +106,8 @@ model-viewer
 
 .navbar{
     background-color: #505050;
-    
+    flex-direction: column;
+    display: flex;
     /* display: none; */
     transform: translateY(100%);
     /* visibility: hidden; */
