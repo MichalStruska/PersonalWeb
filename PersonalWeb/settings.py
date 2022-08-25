@@ -28,7 +28,7 @@ from decouple import config
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["10.0.1.15",
                  "localhost",
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
-    'django_summernote'
+    'django_summernote',
 ]
 
 
@@ -159,9 +159,9 @@ LOGIN_REDIRECT_URL = 'blog-home'
 LOGOUT_REDIRECT_URL = 'blog-home'
 
  
-# if '/app' in os.environ['HOME']:
-#         import django_on_heroku
-#         django_on_heroku.settings(locals())
+if '/app' in os.environ['HOME']:
+        import django_on_heroku
+        django_on_heroku.settings(locals())
 
 
 
