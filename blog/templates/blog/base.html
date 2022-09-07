@@ -37,14 +37,27 @@
         {% if twitter_link %}
           <a class="bi bi-twitter navbar-link" id="twitter" href="{{ twitter_link }}" target="_blank"></a>
         {% endif %}
-        {% if facebook_link %}
-          <a class="bi bi-facebook navbar-link" href="{{ facebook_link }}" target="_blank"></a>
+        {% if researchgate_link %}
+          <a class="navbar-link text-link" href="{{ researchgate_link }}" target="_blank"> Researchgate </a>
         {% endif %}
         {% if github_link %}
           <a class="bi bi-github navbar-link" href="{{ github_link }}" target="_blank"></a>
         {% endif %}
+        {% if linkedin_link %}
+          <a class="bi bi-linkedin navbar-link" href="{{ linkedin_link }}" target="_blank"></a>
+        {% endif %}
+        {% if email %}
+          <a class="navbar-link text-link" href="{{ email }}" target="_blank"> Email </a>
+        {% endif %}
+        {% if orcid_link %}
+          <a class="navbar-link text-link" href="{{ orcid_link }}" target="_blank"> Orcid </a>
+        {% endif %}
+       
+        {% if facebook_link %}
+          <a class="bi bi-facebook navbar-link" href="{{ facebook_link }}" target="_blank"></a>
+        {% endif %}
         {% if instagram_link %}
-          <a class="bi bi-github navbar-link" href="{{ instagram_link }}" target="_blank"></a>
+          <a class="bi bi-instagram navbar-link" href="{{ instagram_link }}" target="_blank"></a>
         {% endif %}
         {% if department_link %}
           <a class="navbar-link text-link" href="{{ department_link }}" target="_blank">

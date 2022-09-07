@@ -28,7 +28,7 @@ from decouple import config
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["10.0.1.15",
                  "localhost",
@@ -158,17 +158,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGOUT_REDIRECT_URL = 'blog-home'
 
- 
-if '/app' in os.environ['HOME']:
-        import django_on_heroku
-        django_on_heroku.settings(locals())
 
+# if '/app' in os.environ['HOME']:
+#         import django_on_heroku
+#         django_on_heroku.settings(locals())
 
 
 AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_REGION_NAME = 'eu-central-1' 
+AWS_S3_REGION_NAME = 'eu-central-1'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = 'public-read'
 AWS_QUERYSTRING_AUTH = False

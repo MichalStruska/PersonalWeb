@@ -62,6 +62,10 @@ def base(request):
         'twitter_link':user_object.twitter_link,
         'github_link':user_object.github_link,
         'instagram_link':user_object.instagram_link,
+        'researchgate_link':user_object.researchgate_link,
+        'orcid_link':user_object.orcid_link,
+        'linkedin_link':user_object.linkedin_link,
+        'email':user_object.email,
         'department_link':user_object.department_link,
         'laboratory_link':user_object.laboratory_link,
     } 
