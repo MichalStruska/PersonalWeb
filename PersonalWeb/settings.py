@@ -28,7 +28,7 @@ from decouple import config
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["10.0.1.15",
                  "localhost",
@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'PersonalWeb.urls'
 
@@ -144,6 +145,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = (
 #     # STATIC_PATH,
@@ -159,9 +161,9 @@ LOGIN_REDIRECT_URL = 'blog-home'
 LOGOUT_REDIRECT_URL = 'blog-home'
 
 
-# if '/app' in os.environ['HOME']:
-#         import django_on_heroku
-#         django_on_heroku.settings(locals())
+if '/app' in os.environ['HOME']:
+        import django_on_heroku
+        django_on_heroku.settings(locals())
 
 
 AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")

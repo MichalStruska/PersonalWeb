@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Category, ProfileSingle, Publication
 
-
 class SingleProfileView(generic.DetailView):
     model = ProfileSingle
  
@@ -18,7 +17,6 @@ def about(request):
        
       'bio':bio,
       'profile_image':profile_image,
-    
     } 
 
     return render(request, 'blog/about.html', context)
@@ -68,7 +66,7 @@ def base(request):
         'email':user_object.email,
         'department_link':user_object.department_link,
         'laboratory_link':user_object.laboratory_link,
-    } 
+    }
 
     return render(request, 'blog/base.html', context)
 

@@ -1,0 +1,86 @@
+.publication-list-container
+{
+    top: 40%;
+    left: 50%;
+    
+    width: 70vw;
+    height: 30vw;
+    overflow: auto;
+}
+
+.publication-card
+{    
+    margin: 5%;
+    text-align: center;
+}
+
+.publication-title
+{
+    font-family: Helvetica;
+    color:rgb(173, 5, 5);
+    float: none;
+}
+
+.publication-authors
+{    
+    font-family: Helvetica;
+}
+
+.publication-snippet
+{
+    font-family: Helvetica;
+    color:rgb(0, 0, 0);
+}
+
+.publication-link
+{
+    font-family: Helvetica;
+    color:rgb(31, 131, 63);
+    text-decoration: none;
+    font-size: 2vh;
+}
+
+a
+{
+    font-size: 2.5vh;
+}
+
+
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape)
+{
+    .publication-list-container
+    {
+        top: 40%;
+        left: 50%;
+        
+        width: 50vw;
+        height: 20vw;
+        overflow: auto;
+    }
+
+    a
+    {
+        font-size: 3vh;
+    }
+
+}
+
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait)
+{
+    .publication-list-container
+    {
+        top: 40%;
+        left: 50%;
+        
+        width: 80vw;
+        height: 90vw;
+        overflow: auto;
+    }
+
+    a
+    {
+        font-size: 2vh;
+    }
+
+}
