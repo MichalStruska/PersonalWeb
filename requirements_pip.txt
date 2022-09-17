@@ -1,0 +1,9 @@
+config==0.3.9
+django_ckeditor==6.3.2
+Django==2.0
+django_extensions==3.0.0
+django-inline-media
+django_on_heroku==1.1.2
+django-summernote
+gunicorn==19.9.0
+Pillow==5.0.0
