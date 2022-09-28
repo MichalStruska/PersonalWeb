@@ -91,10 +91,11 @@ WSGI_APPLICATION = 'PersonalWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'michalstruska$PersonalWeb',
-        'USER': 'michalstruska',
+        'NAME': 'PersonalWeb',
+        'USER': 'root',
         'PASSWORD': 'yessir1408',
-        'HOST': 'michalstruska.mysql.pythonanywhere-services.com',
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',
     }
 }
 
