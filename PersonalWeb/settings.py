@@ -90,12 +90,11 @@ WSGI_APPLICATION = 'PersonalWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'PersonalWeb',
-        'USER': 'postgres',
-        'PASSWORD': config("DATABASE_PASSWORD_LENOVO"),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'michalstruska$PersonalWeb',
+        'USER': 'michalstruska',
+        'PASSWORD': 'yessir1408',
+        'HOST': 'michalstruska.mysql.pythonanywhere-services.com',
     }
 }
 
