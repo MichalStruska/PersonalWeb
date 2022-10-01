@@ -13,13 +13,13 @@
                 
                 <a>{{ pub.author }}</a>
                 <a>({{ pub.publication_date|date:"Y" }}).</a></br>
-                {% if pub.description %}
-                    <a class="publication-title" href="{% url 'publication-detail' pub.pk %}">{{ pub.title }}</a></br>
-                {% else %}
-                    <a class="publication-title" href="{% url 'publication-detail' pub.pk %}">{{ pub.title }}</a></br>
-                {% endif %}
+                <a class="publication-title" href="{% url 'publication-detail' pub.pk %}">{{ pub.title }}</a></br>
                 <a>{{ pub.journal }},</a>
                 <a>{{ pub.pages }}.</a></br>
+
+                {% if pub.progress == "In press" or pub.progress == "In review" %}
+                    <a class="publication-link">{{ pub.progress }}</a></br>
+                {% endif %}
                 
                 {% if pub.link %}
                     <a class="publication-link" href="{{ pub.link }}" target="_blank">pdf</a>

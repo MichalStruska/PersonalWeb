@@ -3,7 +3,6 @@
 {% block title %}<title>Michal-publication-{{ title|truncatewords:3 }}...</title>{% endblock %}
 
 {% block css %}
-
     <link rel="stylesheet" href="{% static 'css/publication_detail.css' %}">
     <link rel="stylesheet" href="{% static 'css/publication_list.css' %}">
 {% endblock %}
@@ -14,4 +13,7 @@
         <h2>{{ author }}</h2>
         <p>{{ description|safe|linebreaksbr }}</p>
     </div>
+    {% if link %}
+        <a class="publication-link" href="{{ link }}" target="_blank">pdf</a>
+    {% endif %}
 {% endblock content %}

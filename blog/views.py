@@ -1,7 +1,7 @@
 from cProfile import Profile
 from django.shortcuts import render
 from django.views import generic
-from .models import Category, ProfileSingle, Publication
+from .models import ProjectType, ProfileSingle, Project, Publication
 
 class SingleProfileView(generic.DetailView):
     model = ProfileSingle
@@ -27,10 +27,8 @@ class PublicationList(generic.ListView):
     template_name = 'blog/publications_list.html'
 
     def get_context_data(self, *args, **kwargs):
-        cat_menu = Category.objects.all()
-        publication_list = Publication.objects.all()
+        publication_list = Publication.objects.all().filter(status=1)
         context = super(PublicationList, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
         context["publication_list"] = publication_list
         return context
 
@@ -39,13 +37,40 @@ class PublicationDetail(generic.DetailView):
     template_name = 'blog/publication_detail.html'
 
     def get_context_data(self, *args, **kwargs):
-        cat_menu = Category.objects.all()
         
         pub = Publication.objects.get(id=self.kwargs['pk'])
         context = super(PublicationDetail, self).get_context_data(*args, **kwargs)
         context["title"] = pub.title
         context["author"] = pub.author
         context["description"] = pub.description
+        context["link"] = pub.link
+        return context
+
+class ProjectList(generic.ListView):
+    model = Project
+    
+    template_name = 'blog/project_list.html'
+
+    def get_context_data(self, *args, **kwargs):
+        # type = Type.objects.all()
+
+        project_list = Project.objects.all().filter(status=1)
+        context = super(ProjectList, self).get_context_data(*args, **kwargs)
+        context["project_list"] = project_list
+        return context
+
+class ProjectDetail(generic.DetailView):
+    model = Project
+
+    template_name = 'blog/project_detail.html'
+
+    def get_context_data(self, *args, **kwargs):
+        
+        project = Project.objects.get(id=self.kwargs['pk'])
+        context = super(ProjectDetail, self).get_context_data(*args, **kwargs)
+        context["title"] = project.title
+        context["description"] = project.description
+        context["link"] = project.link
         return context
 
 def splash(request):

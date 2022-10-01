@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}<title>Michal-projects</title>{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/publication_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/project_list.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="publication-list-container scrollable-container">
+        {% for project in project_list  %}
+            <div class="publication-card">
+                
+                {% if project.thumbnail_image %}
+                    <img src="{{ project.thumbnail_image.url }}" id="myImg" class="myImg thumbnail-image modal-content sizeable">
+                {% endif %}
+
+                <a class="publication-title" href="{% url 'project-detail' project.pk %}">{{ project.title }}</a></br>
+                <a>{{ project.type }}</a></br>
+                
+                {% if project.link %}
+                    <a class="publication-link" href="{{ project.link }}" target="_blank">link</a></br>
+                {% endif %}
+
+                <a> {{ project.progress }} </a>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
