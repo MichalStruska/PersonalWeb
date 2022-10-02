@@ -4,11 +4,9 @@
 
 {% block content %}
 <div class="model" id="3D-model">
-  <model-viewer alt="skull" src="{% static 'images/WildebeestWeb02.glb' %}" disable-pan interaction-prompt="none" autoplay auto-rotate camera-orbit="310deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer>
+  <model-viewer id="model-object" alt="skull" src="{% static 'images/WildebeestWeb03.glb' %}" animation-name="Trot" disable-pan interaction-prompt="none" autoplay auto-rotate camera-orbit="90deg 90deg .5" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer>
   <!-- <model-viewer alt="skull" src="{% static 'images/BlenderDonut01.glb' %}" disable-pan interaction-prompt="none" autoplay auto-rotate camera-orbit="310deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer> -->
   <!-- <model-viewer alt="skull" src="{% static 'images/male_runner04.glb' %}" enable-pan align-model="center" interaction-prompt="none" autoplay animation-name="Run02" auto-rotate camera-orbit="100deg 90deg 2" disable-zoom seamless-poster shadow-intensity="1" camera-controls></model-viewer> -->
 </div>
 {% endblock content %}
-
-    
 
